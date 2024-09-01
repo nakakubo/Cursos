@@ -46,8 +46,8 @@ body * {
     margin: auto;
 	padding: 40px 20px 0px;
 	border-radius: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 }
 
 /* Profile */
@@ -81,13 +81,14 @@ body * {
 	padding: 6px 12px;
 	border-radius: 24px;
 	border: 1px solid var(--fio-padrao);
+	transition: all 0.3s;
 }
 
 .link-destacado a:hover{
 	background: var(--fundo-hover);
-	border: 1px solid var(--fio-hover);
+	border: 2px solid var(--fio-hover);
 	color: var(--cor-ativa);
-	transition: all 0.3s;
+	box-shadow: 0px 0px 12px 1px var(--cor-principal);
 }
 
 /* Botões Portfólio */
@@ -116,8 +117,9 @@ ul li a{
 
 ul li a:hover{
     background: var(--fundo-hover);
-    border: 1px solid var(--fio-hover);
+    border: 2px solid var(--fio-hover);
 	color: var(--cor-ativa);
+	box-shadow: 0px 0px 12px 1px var(--cor-principal);
 }
 
 /* Switcher */
@@ -135,14 +137,14 @@ ul li a:hover{
 	border-radius: 50%;
 	border: none;
 	position: absolute;
-	left: 2px;
+	left: 4%;
 	top: 50%;
 	transform: translateY(-50%);
+	animation: slide-out 0.2s;
 }
 
 .light #switcher button {
-	right: 2px;
-	left: initial;
+	animation: slide-in 0.2s forwards;
 }
 
 #switcher span {
@@ -152,8 +154,14 @@ ul li a:hover{
 	background: var(--fundo-padrao);
 	border: 1px solid var(--fio-padrao);
 	border-radius: 18px;
+	transition: all 0.3s;
 }
 
+#switcher:hover span {
+	background: var(--fundo-hover);
+	border: 2px solid var(--fio-hover);
+	box-shadow: 0px 0px 12px 1px var(--cor-principal);
+}
 /* Social Icons */
 
 #social-icons {
@@ -177,6 +185,7 @@ ul li a:hover{
 
 #social-icons a:hover {
 	background-color: var(--fundo-hover);
+	box-shadow: 0px 0px 12px 1px var(--cor-principal);
 }
 
 #social-icons a:hover ion-icon{
@@ -188,12 +197,30 @@ footer {
 	padding: 0px 0px 20px;
 }
 
-/*media querry */
+/*Mobile Media Querry */
 @media (max-width:600px){
 	:root {
 		--bg-pattern: url(./assets/bg-mobile.jpg);
 	}
 	.light {
 		--bg-pattern: url(./assets/bg-mobile-light.jpg);
+	}
+}
+
+/*Animation Button */
+@keyframes slide-in {
+	from {
+		left:4%;
+	}
+	to{
+		left:54%;
+	}
+}
+@keyframes slide-out {
+	from {
+		left:54%;
+	}
+	to{
+		left:4%;
 	}
 }
