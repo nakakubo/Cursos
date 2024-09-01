@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--cor-principal: #ffffff;
+	--cor-ativa: #000000;
+	--bg-pattern: url(./assets/bg_dark.jpg);
+	--fio-padrao: rgba(255, 255, 255, 0.5);
+	--fio-hover: rgba(255, 255, 255, 0.8);
+	--fundo-padrao: rgba(150, 150, 150, 0.2);
+	--fundo-hover: rgba(255, 255, 255, 0.6);
+	--icone-switcher: url("assets/moon-stars.svg");
+}
+
+.light {
+	--cor-principal: #000000;
+	--cor-ativa: #ffffff;
+	--bg-pattern: url(./assets/bg_light.jpg);
+	--fio-padrao: rgba(0, 0, 0, 0.2);
+	--fio-hover: rgba(0, 0, 0, 0.6);
+	--fundo-padrao: rgba(150, 150, 150, 0.3);
+	--fundo-hover: rgba(0, 0, 0, 0.6);
+	--icone-switcher: url("assets/sun.svg")
+}
+
+body {
+    background: var(--bg-pattern) repeat top center;
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--cor-principal);
+}
+
+#container {
+	background: var(--fundo-padrao);
+    width: 360px;
+    margin: 50px auto 0 auto;
+	padding: 40px 20px 0px;
+	border-radius: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Profile */
+
+#profile {
+    padding: 0px 0px 60px;
+    text-align: center;
+}
+
+#profile img {
+    display: block;
+    width: 140px;
+    margin: auto;
+	clip-path: circle(50%);
+}
+
+#profile p {
+    margin-top: 8px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+/* E-mail Contato */
+
+.link-destacado{
+	padding: 10px 0px 0px;
+}
+
+.link-destacado a{
+	background: var(--fundo-padrao);
+	padding: 6px 12px;
+	border-radius: 24px;
+	border: 1px solid var(--fio-padrao);
+}
+
+.link-destacado a:hover{
+	background: var(--fundo-hover);
+	padding: 6px 12px;
+	border-radius: 24px;
+	border: 1px solid var(--fio-hover);
+	color: var(--cor-ativa);
+}
+
+/* Botões Portfólio */
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+	margin-bottom: 50px;
+}
+
+ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--fundo-padrao);
+    border: 1px solid var(--fio-padrao);
+    border-radius: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+	transition: all 0.3s;
+}
+
+ul li a:hover{
+    background: var(--fundo-hover);
+    border: 1px solid var(--fio-hover);
+	color: var(--cor-ativa);
+}
+
+/* Switcher */
+
+#switcher {
+	position: relative;
+	width: 70px;
+	margin: auto;
+}
+
+#switcher button{
+	background: #ffffff var(--icone-switcher) no-repeat center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: none;
+	position: absolute;
+	left: 2px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.light #switcher button {
+	right: 2px;
+	left: initial;
+}
+
+#switcher span {
+	display: block;
+	width: 70px;
+	height: 35px;
+	background: var(--fundo-padrao);
+	border: 1px solid var(--fio-padrao);
+	border-radius: 18px;
+}
+
+/* Social Icons */
+
+#social-icons {
+	display: flex;
+	justify-content:space-between;
+	font-size: 30px;
+	margin: 0px 0px 10px 0px;
+	padding: 40px 0px 10px;
+	border: solid var(--fio-padrao);
+	border-width: 0px 0px 1px 0px;
+}
+
+#social-icons a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 50%;
+	transition: all 0.3s;
+}
+
+#social-icons a:hover {
+	background-color: var(--fundo-hover);
+}
+
+#social-icons a:hover ion-icon{
+	color: var(--cor-ativa);
+}
+/* Footer */
+footer {
+	text-align: center;
+	padding: 0px 0px 20px;
+}
