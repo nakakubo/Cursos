@@ -7,7 +7,7 @@
 :root {
 	--cor-principal: #ffffff;
 	--cor-ativa: #000000;
-	--bg-pattern: url(./assets/bg_dark.jpg);
+	--bg-pattern: url(./assets/bg-desktop.jpg);
 	--fio-padrao: rgba(255, 255, 255, 0.5);
 	--fio-hover: rgba(255, 255, 255, 0.8);
 	--fundo-padrao: rgba(150, 150, 150, 0.2);
@@ -18,7 +18,7 @@
 .light {
 	--cor-principal: #000000;
 	--cor-ativa: #ffffff;
-	--bg-pattern: url(./assets/bg_light.jpg);
+	--bg-pattern: url(./assets/bg-desktop-light.jpg);
 	--fio-padrao: rgba(0, 0, 0, 0.2);
 	--fio-hover: rgba(0, 0, 0, 0.6);
 	--fundo-padrao: rgba(150, 150, 150, 0.3);
@@ -27,7 +27,11 @@
 }
 
 body {
-    background: var(--bg-pattern) repeat top center;
+    background: var(--bg-pattern) no-repeat center/cover;
+	height: 100vh;
+	padding: 20px;
+	display: flex;
+    flex-direction: column;
 }
 
 body * {
@@ -37,8 +41,9 @@ body * {
 
 #container {
 	background: var(--fundo-padrao);
-    width: 360px;
-    margin: 50px auto 0 auto;
+	width:100%;
+    max-width: 600px;
+    margin: auto;
 	padding: 40px 20px 0px;
 	border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -80,10 +85,9 @@ body * {
 
 .link-destacado a:hover{
 	background: var(--fundo-hover);
-	padding: 6px 12px;
-	border-radius: 24px;
 	border: 1px solid var(--fio-hover);
 	color: var(--cor-ativa);
+	transition: all 0.3s;
 }
 
 /* Botões Portfólio */
@@ -182,4 +186,14 @@ ul li a:hover{
 footer {
 	text-align: center;
 	padding: 0px 0px 20px;
+}
+
+/*media querry */
+@media (max-width:600px){
+	:root {
+		--bg-pattern: url(./assets/bg-mobile.jpg);
+	}
+	.light {
+		--bg-pattern: url(./assets/bg-mobile-light.jpg);
+	}
 }
